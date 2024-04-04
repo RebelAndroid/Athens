@@ -1,14 +1,5 @@
-target-folder = "target"
-
-[root]
-type = "folder"
-contents = ["first_layer", "first_layer"]
-
-[first_layer]
-type = "folder"
-contents = ["second_layer", "second_layer", "second_layer"]
-
-[second_layer]
-type = "file"
-contents = "ascii"
-size = 8192
+root = {(first_layer, other_second_layer)Uniform(3, 5)}
+first_layer = {second_layer?, second_layer?, second_layer?}
+second_layer = (ascii(8192))
+second_layer = (ascii(128))
+? = Bernoulli(0.5)
